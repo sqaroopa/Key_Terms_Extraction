@@ -3,16 +3,20 @@ from hstest.test_case import TestCase
 from hstest.check_result import CheckResult
 from test.news import news_text
 
-answer = {'Brain Disconnects During Sleep:': ['the', 'of', ',', '.', 'that'],
-          'New Portuguese skull may be an early relative of Neandertals:': ["of", "the", ",", "in", "a"],
-          'Living by the coast could improve mental health:': ['the', 'to', ',', '.', 'health'],
-          'Did you knowingly commit a crime? Brain scans could tell:': ['the', ',', '.', 'of', 'a'],
-          'Computer learns to detect skin cancer more accurately than doctors:': [",", "the", "of", ".", "in"],
-          'US economic growth stronger than expected despite weak demand:': ["the", ",", "in", "of", "to"],
-          'Microsoft becomes third listed US firm to be valued at $1tn:': ["the", ".", "to", ",", "microsoft"],
-          "Apple's Siri is a better rapper than you:": [",", ".", "'s", "the", "and"],
-          'Netflix viewers like comedy for breakfast and drama at lunch:': [",", "the", "of", ".", "a"],
-          'Loneliness May Make Quitting Smoking Even Tougher:': [",", "to", ".", "the", "that"]}
+answer = {'Brain Disconnects During Sleep:': ["sleep", "cortex", "consciousness", "tononi", "activity"],
+          'New Portuguese skull may be an early relative of Neandertals:': ["skull", "fossil", "europe", "year",
+                                                                            "trait"],
+          'Living by the coast could improve mental health:': ['health', 'mental', 'coast', 'research', 'living'],
+          'Did you knowingly commit a crime? Brain scans could tell:': ["brain", "study", "wa", "suitcase", "result"],
+          'Computer learns to detect skin cancer more accurately than doctors:': ["dermatologist", "skin", "melanoma",
+                                                                                  "year", "cnn"],
+          'US economic growth stronger than expected despite weak demand:': ["u", "quarter", "ha", "year", "rate"],
+          'Microsoft becomes third listed US firm to be valued at $1tn:': ["microsoft", "share", "cloud", "market",
+                                                                           "ha"],
+          "Apple's Siri is a better rapper than you:": ["siri", "wa", "time", "rhyme", "ha"],
+          'Netflix viewers like comedy for breakfast and drama at lunch:': ["netflix", "show", "day", "comedy",
+                                                                            "viewer"],
+          'Loneliness May Make Quitting Smoking Even Tougher:': ["smoking", "loneliness", "study", "smoke", "quit"]}
 
 
 class KTETest(StageTest):
@@ -38,7 +42,6 @@ class KTETest(StageTest):
             return CheckResult.wrong(feedback="The number of headers should be equal "
                                               "to the number of lines with keywords.\n"
                                               "Please check the output of your program.")
-
         for i in range(len(headers)):
             news[headers[i]] = news_text[i]
         wrong_news = []
