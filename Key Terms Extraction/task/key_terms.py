@@ -44,30 +44,3 @@ for topic in news:
         out_list.append(i[0])
     out = " ".join(out_list)
     print(f'{header}:\n{out}')
-
-
-# import nltk
-# poem = ['Twinkle', ',', 'twinkle', ',', 'little', 'star', ',',
-#         'How', 'I', 'wonder', 'what', 'you', 'are', '.',
-#         'Up', 'above', 'the', 'world', 'so', 'high', ',',
-#         'Like', 'a', 'diamond', 'in', 'the', 'sky', '.']
-# out = []
-# for i in nltk.pos_tag(poem):
-#     if i[1] == 'NN':
-#         # print(f'{i[0]}\n')
-#         out.append(i[0])
-# print(out)
-# from nltk.stem import SnowballStemmer
-#
-#
-# # the following line reads a text from the input and converts it into a list
-# # sent = input().split()
-# sent = 'Allen Leuten recht getan ist eine Kunst die niemand kann'.split()
-# snowball = SnowballStemmer('german')
-# for i in sent:
-#     snowball.stem(f'{i}')
-
-# from nltk.stem import SnowballStemmer
-# snowball = SnowballStemmer('english')
-# print(snowball.stem('playing')) # play
-# print(snowball.stem('played'))   # play
